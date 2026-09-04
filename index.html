@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sort helping-profession challenges, discover patterns, and save careers to explore.">
+  <title>Helping Professions Card Sort</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to activity</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div>
+        <p class="eyebrow">Pomerantz Career Center</p>
+        <h1>Helping Professions Card Sort</h1>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="shell">
+    <section id="sort-view" class="view" aria-labelledby="sort-heading">
+      <div class="intro-row">
+        <div>
+          <p class="step-label">Step 1 of 3 · Quick sort</p>
+          <h2 id="sort-heading">Would you enjoy this kind of challenge?</h2>
+          <p>Respond to the challenge itself. The careers and patterns behind each card will be revealed after you sort.</p>
+          <p class="data-notice"><strong>About your response:</strong> When you build your results, this activity saves your anonymous card choices for the Pomerantz Career Center. It does not ask for your name or email. Major and class information are optional.</p>
+        </div>
+        <button id="reset-top" class="text-button" type="button">Start over</button>
+      </div>
+
+      <div class="progress-wrap" aria-live="polite">
+        <div class="progress-meta"><span id="progress-text">Card 1 of 42</span><span id="saved-note">Cards shuffled · Progress saves here</span></div>
+        <div class="progress-track"><div id="progress-bar" class="progress-bar"></div></div>
+      </div>
+
+      <div class="deck-stage">
+        <article id="sort-card" class="sort-card" tabindex="-1">
+          <h3 id="challenge-prompt"></h3>
+          <p id="short-description" class="card-description"></p>
+        </article>
+      </div>
+
+      <div class="decision-buttons" aria-label="Sort this card">
+        <button class="decision not" data-choice="not" type="button"><span aria-hidden="true">×</span> Not for me</button>
+        <button class="decision maybe" data-choice="maybe" type="button"><span aria-hidden="true">?</span> Maybe</button>
+        <button class="decision interested" data-choice="interested" type="button"><span aria-hidden="true">✓</span> Interested</button>
+      </div>
+      <button id="back-card" class="back-button" type="button">← Change previous answer</button>
+    </section>
+
+    <section id="patterns-view" class="view" hidden aria-labelledby="patterns-heading">
+      <p class="step-label">Step 2 of 3 · Find your patterns</p>
+      <div class="result-heading-row">
+        <div>
+          <h2 id="patterns-heading">What caught your interest?</h2>
+          <p id="patterns-summary"></p>
+        </div>
+        <button id="review-sort" class="secondary-button" type="button">Review my sort</button>
+      </div>
+
+      <div id="pattern-panel" class="pattern-panel"></div>
+
+      <div class="shortlist-heading">
+        <div>
+          <h3>Choose up to 5 to explore further</h3>
+          <p>Select the challenges you most want to investigate. Open any card to see careers, settings, and ways to gain experience.</p>
+        </div>
+        <div id="shortlist-count" class="count-pill" aria-live="polite">0 of 5 selected</div>
+      </div>
+
+      <div id="filter-row" class="filter-row" aria-label="Filter cards by pattern"></div>
+      <div id="candidate-grid" class="candidate-grid"></div>
+      <div id="empty-candidates" class="empty-state" hidden>
+        <h3>No careers are in this group yet.</h3>
+        <p>Choose another pattern, or review your sort and move a few cards into Interested or Maybe.</p>
+      </div>
+
+      <div class="sticky-next">
+        <p id="next-help">Select at least one card to build your results.</p>
+        <button id="build-results" class="primary-button" type="button" disabled>Build my exploration list →</button>
+      </div>
+    </section>
+
+    <section id="results-view" class="view" hidden aria-labelledby="results-heading">
+      <p class="step-label">Step 3 of 3 · Save what you found</p>
+      <div class="result-heading-row">
+        <div>
+          <h2 id="results-heading">Your helping professions exploration list</h2>
+          <p>Use this as a starting point—not a final decision. Notice what repeats, then investigate the careers and experiences that stand out.</p>
+        </div>
+        <button id="edit-shortlist" class="secondary-button" type="button">Edit choices</button>
+      </div>
+
+      <div id="result-patterns" class="result-patterns"></div>
+      <div id="result-cards" class="result-cards"></div>
+
+      <section class="explore-next" aria-labelledby="explore-next-heading">
+        <h3 id="explore-next-heading">Keep exploring your strongest options</h3>
+        <p>Use more than one source. Compare duties, preparation, work settings, and outlook; then test what you learn through conversations and experience.</p>
+        <div class="resource-grid">
+          <a href="https://careers.uiowa.edu/career-communities/helping-counseling" target="_blank" rel="noopener"><strong>Helping &amp; Counseling</strong><span>Career ideas, organizations, search terms, internships, and job resources</span></a>
+          <a href="https://careers.uiowa.edu/explore" target="_blank" rel="noopener"><strong>Explore Majors &amp; Careers</strong><span>Assessments, O*NET, the Occupational Outlook Handbook, MyMajors, and exploration tools</span></a>
+          <a href="https://careers.uiowa.edu/career-prep/gain-experience" target="_blank" rel="noopener"><strong>Gain Experience</strong><span>HawkShadow, Career Treks, research, volunteering, simulations, micro-internships, and experiential courses</span></a>
+          <a href="https://careers.uiowa.edu/informational-interviews" target="_blank" rel="noopener"><strong>Talk with a professional</strong><span>Plan an informational interview to learn what a role is really like</span></a>
+          <a href="https://www.onetonline.org/" target="_blank" rel="noopener"><strong>O*NET</strong><span>Compare tasks, skills, interests, work activities, and preparation</span></a>
+          <a href="https://www.bls.gov/ooh/" target="_blank" rel="noopener"><strong>Occupational Outlook Handbook</strong><span>Verify education, duties, pay, and employment outlook</span></a>
+        </div>
+        <p class="accuracy-note"><strong>Important:</strong> Job titles and credential requirements vary by employer, state, and type of service. Verify current requirements before choosing a program or career path.</p>
+      </section>
+
+      <div class="action-panel">
+        <div>
+          <h3>Take your results with you</h3>
+          <p>Your anonymous card choices have been sent automatically. Add optional context below, then save to unlock printing.</p>
+        </div>
+        <form id="response-form" class="response-form">
+          <div class="form-field">
+            <label for="student-major">Major <span>(optional)</span></label>
+            <input id="student-major" name="major" type="text" maxlength="120" autocomplete="organization-title" placeholder="e.g., Psychology">
+          </div>
+          <div class="form-field">
+            <label for="usage-context">How are you using this? <span>(optional)</span></label>
+            <select id="usage-context" name="usageContext">
+              <option value="">Select one</option>
+              <option value="class">Class assignment</option>
+              <option value="workshop">Workshop or presentation</option>
+              <option value="coaching">Career coaching appointment</option>
+              <option value="individual">Individual exploration</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="course-group">Course or group <span>(optional)</span></label>
+            <input id="course-group" name="courseGroup" type="text" maxlength="120" placeholder="e.g., CCP:1300 or student organization">
+          </div>
+          <div class="honeypot" aria-hidden="true">
+            <label for="website">Website</label>
+            <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+          </div>
+          <button id="save-results" class="primary-button" type="submit">Save results &amp; unlock printing</button>
+        </form>
+        <div class="action-buttons">
+          <button id="copy-results" class="primary-button" type="button">Copy my results</button>
+          <button id="print-results" class="secondary-button" type="button" disabled aria-describedby="save-status">Print or save as PDF</button>
+          <button id="reset-bottom" class="text-button" type="button">Start over</button>
+        </div>
+        <p id="save-status" class="save-status" role="status" aria-live="polite">Save your results to enable printing.</p>
+        <p id="copy-status" class="copy-status" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="detail-dialog" class="detail-dialog">
+    <div class="dialog-topline">
+      <span id="dialog-chip" class="category-chip"></span>
+      <button id="close-dialog" class="close-button" type="button" aria-label="Close details">×</button>
+    </div>
+    <h2 id="dialog-title"></h2>
+    <p id="dialog-description"></p>
+    <dl class="detail-list">
+      <div><dt>Strengths you might use</dt><dd id="dialog-strengths"></dd></div>
+      <div><dt>Careers to investigate</dt><dd id="dialog-careers"></dd></div>
+      <div><dt>Typical preparation</dt><dd id="dialog-preparation"></dd></div>
+      <div><dt>Common settings</dt><dd id="dialog-settings"></dd></div>
+      <div><dt>A question to investigate</dt><dd id="dialog-reality"></dd></div>
+      <div><dt>Ways to try it out</dt><dd id="dialog-opportunities"></dd></div>
+    </dl>
+    <div class="dialog-resources">
+      <a id="dialog-onet" class="resource-link" href="https://www.onetonline.org/" target="_blank" rel="noopener">Research a related occupation in O*NET ↗</a>
+      <a class="resource-link" href="https://careers.uiowa.edu/career-communities/helping-counseling" target="_blank" rel="noopener">Explore Helping &amp; Counseling resources ↗</a>
+    </div>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <div id="print-locked-message" class="print-locked-message">
+    <h1>Submit your card sort before printing</h1>
+    <p>Return to the Helping Professions Card Sort, select “Save results &amp; unlock printing,” and then print again.</p>
+  </div>
+  <script src="cards-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
