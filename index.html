@@ -26,7 +26,7 @@
           <p class="step-label">Step 1 of 3 · Quick sort</p>
           <h2 id="sort-heading">Would you enjoy this kind of challenge?</h2>
           <p>Respond to the challenge itself. The careers and patterns behind each card will be revealed after you sort.</p>
-          <p class="data-notice"><strong>About your response:</strong> At the end, you can submit your anonymous card choices to the Pomerantz Career Center. Submission is required before printing. This activity does not ask for your name or email. Major and class information are optional.</p>
+          <p class="data-notice"><strong>About your response:</strong> At the end, submit your anonymous card choices to the Pomerantz Career Center to view and print your results. This activity does not ask for your name or email. Major and class information are optional.</p>
         </div>
         <button id="reset-top" class="text-button" type="button">Start over</button>
       </div>
@@ -80,41 +80,43 @@
 
       <div class="sticky-next">
         <p id="next-help">Select at least one card to build your results.</p>
-        <button id="build-results" class="primary-button" type="button" disabled>Build my exploration list →</button>
+        <button id="build-results" class="primary-button" type="button" disabled>Continue to submit →</button>
       </div>
     </section>
 
     <section id="results-view" class="view" hidden aria-labelledby="results-heading">
-      <p class="step-label">Step 3 of 3 · Save what you found</p>
+      <p class="step-label">Step 3 of 3 · Submit and explore</p>
       <div class="result-heading-row">
         <div>
-          <h2 id="results-heading">Your helping professions exploration list</h2>
-          <p>Use this as a starting point—not a final decision. Notice what repeats, then investigate the careers and experiences that stand out.</p>
+          <h2 id="results-heading">Submit to view your exploration list</h2>
+          <p id="results-intro">Your patterns and selected career information will appear after your anonymous response is submitted.</p>
         </div>
         <button id="edit-shortlist" class="secondary-button" type="button">Edit choices</button>
       </div>
 
-      <div id="result-patterns" class="result-patterns"></div>
-      <div id="result-cards" class="result-cards"></div>
+      <div id="results-content" hidden>
+        <div id="result-patterns" class="result-patterns"></div>
+        <div id="result-cards" class="result-cards"></div>
 
-      <section class="explore-next" aria-labelledby="explore-next-heading">
-        <h3 id="explore-next-heading">Keep exploring your strongest options</h3>
-        <p>Use more than one source. Compare duties, preparation, work settings, and outlook; then test what you learn through conversations and experience.</p>
-        <div class="resource-grid">
-          <a href="https://careers.uiowa.edu/career-communities/helping-counseling" target="_blank" rel="noopener"><strong>Helping &amp; Counseling</strong><span>Career ideas, organizations, search terms, internships, and job resources</span></a>
-          <a href="https://careers.uiowa.edu/explore" target="_blank" rel="noopener"><strong>Explore Majors &amp; Careers</strong><span>Assessments, O*NET, the Occupational Outlook Handbook, MyMajors, and exploration tools</span></a>
-          <a href="https://careers.uiowa.edu/career-prep/gain-experience" target="_blank" rel="noopener"><strong>Gain Experience</strong><span>HawkShadow, Career Treks, research, volunteering, simulations, micro-internships, and experiential courses</span></a>
-          <a href="https://careers.uiowa.edu/informational-interviews" target="_blank" rel="noopener"><strong>Talk with a professional</strong><span>Plan an informational interview to learn what a role is really like</span></a>
-          <a href="https://www.onetonline.org/" target="_blank" rel="noopener"><strong>O*NET</strong><span>Compare tasks, skills, interests, work activities, and preparation</span></a>
-          <a href="https://www.bls.gov/ooh/" target="_blank" rel="noopener"><strong>Occupational Outlook Handbook</strong><span>Verify education, duties, pay, and employment outlook</span></a>
-        </div>
-        <p class="accuracy-note"><strong>Important:</strong> Job titles and credential requirements vary by employer, state, and type of service. Verify current requirements before choosing a program or career path.</p>
-      </section>
+        <section class="explore-next" aria-labelledby="explore-next-heading">
+          <h3 id="explore-next-heading">Keep exploring your strongest options</h3>
+          <p>Use more than one source. Compare duties, preparation, work settings, and outlook; then test what you learn through conversations and experience.</p>
+          <div class="resource-grid">
+            <a href="https://careers.uiowa.edu/career-communities/helping-counseling" target="_blank" rel="noopener"><strong>Helping &amp; Counseling</strong><span>Career ideas, organizations, search terms, internships, and job resources</span></a>
+            <a href="https://careers.uiowa.edu/explore" target="_blank" rel="noopener"><strong>Explore Majors &amp; Careers</strong><span>Assessments, O*NET, the Occupational Outlook Handbook, MyMajors, and exploration tools</span></a>
+            <a href="https://careers.uiowa.edu/career-prep/gain-experience" target="_blank" rel="noopener"><strong>Gain Experience</strong><span>HawkShadow, Career Treks, research, volunteering, simulations, micro-internships, and experiential courses</span></a>
+            <a href="https://careers.uiowa.edu/informational-interviews" target="_blank" rel="noopener"><strong>Talk with a professional</strong><span>Plan an informational interview to learn what a role is really like</span></a>
+            <a href="https://www.onetonline.org/" target="_blank" rel="noopener"><strong>O*NET</strong><span>Compare tasks, skills, interests, work activities, and preparation</span></a>
+            <a href="https://www.bls.gov/ooh/" target="_blank" rel="noopener"><strong>Occupational Outlook Handbook</strong><span>Verify education, duties, pay, and employment outlook</span></a>
+          </div>
+          <p class="accuracy-note"><strong>Important:</strong> Job titles and credential requirements vary by employer, state, and type of service. Verify current requirements before choosing a program or career path.</p>
+        </section>
+      </div>
 
       <div class="action-panel">
         <div>
-          <h3>Take your results with you</h3>
-          <p>Add any optional context below, then submit your anonymous results to unlock printing.</p>
+          <h3 id="submit-panel-title">Submit to view your results</h3>
+          <p id="submit-panel-copy">Add any optional context below, then submit your anonymous choices to reveal your patterns and exploration list.</p>
         </div>
         <form id="response-form" class="response-form">
           <div class="form-field">
@@ -134,20 +136,21 @@
           </div>
           <div class="form-field">
             <label for="course-group">Course or group <span>(optional)</span></label>
-            <input id="course-group" name="courseGroup" type="text" maxlength="120" placeholder="e.g., CCP:1300 or student organization">
+            <input id="course-group" name="courseGroup" type="text" maxlength="120" placeholder="e.g., CCP:1300 or student organization" aria-describedby="course-lock-note">
+            <small id="course-lock-note" class="course-lock-note" hidden>Provided by your course link</small>
           </div>
           <div class="honeypot" aria-hidden="true">
             <label for="website">Website</label>
             <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
           </div>
-          <button id="save-results" class="primary-button" type="submit">Save results &amp; unlock printing</button>
+          <button id="save-results" class="primary-button" type="submit">Submit &amp; view my results</button>
         </form>
-        <div class="action-buttons">
+        <div id="action-buttons" class="action-buttons" hidden>
           <button id="copy-results" class="primary-button" type="button">Copy my results</button>
           <button id="print-results" class="secondary-button" type="button" disabled aria-describedby="save-status">Print or save as PDF</button>
           <button id="reset-bottom" class="text-button" type="button">Start over</button>
         </div>
-        <p id="save-status" class="save-status" role="status" aria-live="polite">Save your results to enable printing.</p>
+        <p id="save-status" class="save-status" role="status" aria-live="polite">Submit your results to view your exploration list and enable printing.</p>
         <p id="copy-status" class="copy-status" role="status" aria-live="polite"></p>
       </div>
     </section>
@@ -177,7 +180,7 @@
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <div id="print-locked-message" class="print-locked-message">
     <h1>Submit your card sort before printing</h1>
-    <p>Return to the Helping Professions Card Sort, select “Save results &amp; unlock printing,” and then print again.</p>
+    <p>Return to the Helping Professions Card Sort, select “Submit &amp; view my results,” and then print again.</p>
   </div>
   <script src="cards-data.js"></script>
   <script src="app.js"></script>

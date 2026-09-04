@@ -150,6 +150,8 @@ h3 { line-height: 1.25; }
 .form-field label { font-weight:800; font-size:.9rem; }
 .form-field label span { font-weight:500; color:#555; }
 .form-field input, .form-field select { width:100%; min-height:44px; padding:.55rem .65rem; border:1px solid #777; border-radius:6px; background:#fff; color:#111; }
+.form-field input[readonly] { background:#e5e5e5; border-color:#999; color:#333; cursor:not-allowed; }
+.course-lock-note { color:#444; font-size:.8rem; font-weight:700; }
 .response-form .primary-button { grid-column:1 / -1; justify-self:start; }
 .honeypot { position:absolute !important; width:1px; height:1px; overflow:hidden; clip:rect(1px,1px,1px,1px); white-space:nowrap; }
 .action-buttons { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1rem; }

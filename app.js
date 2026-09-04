@@ -86,8 +86,9 @@
     state.submittedFingerprint = "";
     document.body.classList.remove("print-unlocked");
     if (el("print-results")) el("print-results").disabled = true;
-    if (el("save-status")) el("save-status").textContent = "Save your results to enable printing.";
-    if (el("save-results")) el("save-results").textContent = "Save results & unlock printing";
+    if (el("save-status")) el("save-status").textContent = "Submit your results to view your exploration list and enable printing.";
+    if (el("save-results")) el("save-results").textContent = "Submit & view my results";
+    updateResultsAccess(false);
   }
   function category(card) { return categoryInfo[card.categoryA] || categoryInfo["Behind-the-Scenes Helpers"]; }
   function experienceIdeas(card) {
@@ -323,8 +324,9 @@
         state.submittedFingerprint = currentFingerprint();
         saveState();
         updatePrintLock();
-        el("save-status").textContent = "Results saved. Printing is now available.";
-        saveButton.textContent = "Saved ✓";
+        el("save-status").textContent = "Results submitted. Your exploration list is ready.";
+        saveButton.textContent = "Update submitted information";
+        el("results-content").scrollIntoView({ behavior: "smooth", block: "start" });
       } else if (state.submittedFingerprint !== currentFingerprint()) {
         el("save-status").textContent = "Anonymous card choices saved. Add optional context and save to enable printing.";
       }
@@ -339,7 +341,7 @@
     } finally {
       if (manual) {
         saveButton.disabled = false;
-        if (state.submittedFingerprint !== currentFingerprint()) saveButton.textContent = "Save results & unlock printing";
+        if (state.submittedFingerprint !== currentFingerprint()) saveButton.textContent = "Submit & view my results";
       }
     }
   }
@@ -350,12 +352,28 @@
     el("course-group").value = state.context?.courseGroup || "";
     el("course-group").readOnly = Boolean(courseFromUrl);
     el("course-group").setAttribute("aria-readonly", String(Boolean(courseFromUrl)));
+    el("course-lock-note").hidden = !courseFromUrl;
+  }
+
+  function updateResultsAccess(unlocked) {
+    if (!el("results-content")) return;
+    el("results-content").hidden = !unlocked;
+    el("action-buttons").hidden = !unlocked;
+    el("results-heading").textContent = unlocked ? "Your helping professions exploration list" : "Submit to view your exploration list";
+    el("results-intro").textContent = unlocked
+      ? "Use this as a starting point—not a final decision. Notice what repeats, then investigate the careers and experiences that stand out."
+      : "Your patterns and selected career information will appear after your anonymous response is submitted.";
+    el("submit-panel-title").textContent = unlocked ? "Your results were submitted" : "Submit to view your results";
+    el("submit-panel-copy").textContent = unlocked
+      ? "You can update the optional information below or take your results with you."
+      : "Add any optional context below, then submit your anonymous choices to reveal your patterns and exploration list.";
   }
 
   function updatePrintLock() {
     const unlocked = Boolean(state.submittedFingerprint) && state.submittedFingerprint === currentFingerprint();
     el("print-results").disabled = !unlocked;
     document.body.classList.toggle("print-unlocked", unlocked);
+    updateResultsAccess(unlocked);
   }
 
   function updateContext() {
