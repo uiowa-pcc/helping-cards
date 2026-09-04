@@ -36,7 +36,9 @@
   };
 
   const storageKey = "uiowa-helping-card-sort-v2";
+  const courseFromUrl = new URLSearchParams(window.location.search).get("course")?.trim().slice(0, 120) || "";
   let state = loadState();
+  if (courseFromUrl) state.context.courseGroup = courseFromUrl;
   let cards = orderedCards(state.order);
   let currentFilter = "all";
   let toastTimer;
@@ -346,6 +348,8 @@
     el("student-major").value = state.context?.major || "";
     el("usage-context").value = state.context?.usageContext || "";
     el("course-group").value = state.context?.courseGroup || "";
+    el("course-group").readOnly = Boolean(courseFromUrl);
+    el("course-group").setAttribute("aria-readonly", String(Boolean(courseFromUrl)));
   }
 
   function updatePrintLock() {
@@ -436,7 +440,6 @@
   el("build-results").addEventListener("click", () => {
     renderResults();
     showView("results");
-    submitResponse({ manual: false });
   });
   el("edit-shortlist").addEventListener("click", () => { renderPatterns(); showView("patterns"); });
   el("copy-results").addEventListener("click", copyResults);

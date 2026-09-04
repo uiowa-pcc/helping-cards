@@ -43,6 +43,26 @@ Do not upload `supabase-setup.sql` to the public repository unless you want to k
 
 Only after this test succeeds should the ICON iframe be changed from the current site URL to the GitHub Pages URL.
 
+## 4. Add private instructor reports
+
+1. In Supabase, open **SQL Editor > New query**.
+2. Open `reporting-setup.sql`, copy the entire file, and paste it into the query.
+3. Select **Run**.
+4. Open **Table Editor**. The private reporting views will appear with these names:
+   - `instructor_card_interest`
+   - `instructor_final_choices`
+   - `instructor_pattern_summary`
+
+Only the Supabase project owner and intentionally added collaborators can view or export these reports.
+
+## Class-specific links
+
+Add `?course=` and a short class code to the normal activity URL. For example:
+
+`https://kaitlyndbailey-cyber.github.io/helping-cards/?course=CCP1300-Fall2026`
+
+The course/group field will populate automatically and cannot be accidentally changed by students. Use a consistent, non-identifying class code for each course, workshop, or presentation.
+
 ## Editing later
 
 - Edit card wording and career information in `cards-data.js`.
@@ -54,5 +74,4 @@ If the card set changes substantially, update `CARD_SET_VERSION` near the top of
 
 ## Downloading responses
 
-In Supabase, open **Table Editor > card_sort_responses**, then use the table's export/download option to save a CSV. Excel opens the CSV directly.
-
+In Supabase, open the relevant instructor view in **Table Editor**, then use its export/download option to save a CSV. Excel opens the CSV directly. Use `card_sort_responses` only when you need the original raw submission records.
