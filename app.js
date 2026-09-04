@@ -86,7 +86,7 @@
     state.submittedFingerprint = "";
     document.body.classList.remove("print-unlocked");
     if (el("print-results")) el("print-results").disabled = true;
-    if (el("save-status")) el("save-status").textContent = "Submit your results to view your exploration list and enable printing.";
+    if (el("save-status")) el("save-status").textContent = "";
     if (el("save-results")) el("save-results").textContent = "Submit & view my results";
     updateResultsAccess(false);
   }
@@ -359,14 +359,10 @@
     if (!el("results-content")) return;
     el("results-content").hidden = !unlocked;
     el("action-buttons").hidden = !unlocked;
-    el("results-heading").textContent = unlocked ? "Your helping professions exploration list" : "Submit to view your exploration list";
+    el("results-heading").textContent = unlocked ? "Your helping professions exploration list" : "One last step";
     el("results-intro").textContent = unlocked
       ? "Use this as a starting point—not a final decision. Notice what repeats, then investigate the careers and experiences that stand out."
-      : "Your patterns and selected career information will appear after your anonymous response is submitted.";
-    el("submit-panel-title").textContent = unlocked ? "Your results were submitted" : "Submit to view your results";
-    el("submit-panel-copy").textContent = unlocked
-      ? "You can update the optional information below or take your results with you."
-      : "Add any optional context below, then submit your anonymous choices to reveal your patterns and exploration list.";
+      : "Add any optional context below. Your patterns and exploration list will appear after you submit.";
   }
 
   function updatePrintLock() {
