@@ -154,7 +154,8 @@ h3 { line-height: 1.25; }
 .course-lock-note { color:#444; font-size:.8rem; font-weight:700; }
 .response-form .primary-button { grid-column:1 / -1; justify-self:start; }
 .honeypot { position:absolute !important; width:1px; height:1px; overflow:hidden; clip:rect(1px,1px,1px,1px); white-space:nowrap; }
-.action-buttons { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1rem; }
+.submission-secondary { margin-top:.75rem; }
+.final-actions { display:flex; flex-wrap:wrap; align-items:center; gap:.7rem; margin-top:1.5rem; padding-top:1.25rem; border-top:1px solid #bbb; }
 .secondary-button:disabled { opacity:.48; cursor:not-allowed; }
 .save-status { margin-top:.7rem !important; font-weight:800; }
 .copy-status { margin-top: .6rem !important; font-weight: 800; }
@@ -194,7 +195,7 @@ h3 { line-height: 1.25; }
 }
 
 @media print {
-  .site-header, #sort-view, #patterns-view, .action-panel, #edit-shortlist { display:none !important; }
+  .site-header, #sort-view, #patterns-view, .action-panel, .final-actions { display:none !important; }
   body { background:#fff; font-size:11pt; }
   .shell { max-width:none; padding:0; }
   #results-view { display:block !important; }

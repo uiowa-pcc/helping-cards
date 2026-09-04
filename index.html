@@ -26,7 +26,7 @@
           <p class="step-label">Step 1 of 3 · Quick sort</p>
           <h2 id="sort-heading">Would you enjoy this kind of challenge?</h2>
           <p>Respond to the challenge itself. The careers and patterns behind each card will be revealed after you sort.</p>
-          <p class="data-notice"><strong>About your response:</strong> At the end, submit your anonymous card choices to the Pomerantz Career Center to view and print your results. This activity does not ask for your name or email. Major and class information are optional.</p>
+          <p class="data-notice"><strong>About your response:</strong> At the end, submit your anonymous card choices to the Pomerantz Career Center to view your results. This activity does not ask for your name or email. Major and class information are optional.</p>
         </div>
         <button id="reset-top" class="text-button" type="button">Start over</button>
       </div>
@@ -91,7 +91,6 @@
           <h2 id="results-heading">One last step</h2>
           <p id="results-intro">Add any optional context below. Your patterns and exploration list will appear after you submit.</p>
         </div>
-        <button id="edit-shortlist" class="secondary-button" type="button">Edit choices</button>
       </div>
 
       <div id="results-content" hidden>
@@ -111,9 +110,17 @@
           </div>
           <p class="accuracy-note"><strong>Important:</strong> Job titles and credential requirements vary by employer, state, and type of service. Verify current requirements before choosing a program or career path.</p>
         </section>
+
+        <div class="final-actions">
+          <button id="copy-results" class="primary-button" type="button">Copy my results</button>
+          <button id="print-results" class="secondary-button" type="button">Print or save as PDF</button>
+          <button id="edit-shortlist" class="secondary-button" type="button">Edit choices</button>
+          <button id="reset-bottom" class="text-button" type="button">Start over</button>
+        </div>
+        <p id="copy-status" class="copy-status" role="status" aria-live="polite"></p>
       </div>
 
-      <div class="action-panel">
+      <div id="submission-panel" class="action-panel">
         <form id="response-form" class="response-form">
           <div class="form-field">
             <label for="student-major">Major <span>(optional)</span></label>
@@ -141,13 +148,10 @@
           </div>
           <button id="save-results" class="primary-button" type="submit">Submit &amp; view my results</button>
         </form>
-        <div id="action-buttons" class="action-buttons" hidden>
-          <button id="copy-results" class="primary-button" type="button">Copy my results</button>
-          <button id="print-results" class="secondary-button" type="button" disabled aria-describedby="save-status">Print or save as PDF</button>
-          <button id="reset-bottom" class="text-button" type="button">Start over</button>
+        <div class="submission-secondary">
+          <button id="reset-submit" class="text-button" type="button">Start over</button>
         </div>
         <p id="save-status" class="save-status" role="status" aria-live="polite"></p>
-        <p id="copy-status" class="copy-status" role="status" aria-live="polite"></p>
       </div>
     </section>
   </main>

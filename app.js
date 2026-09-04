@@ -85,7 +85,6 @@
   function invalidateSubmission() {
     state.submittedFingerprint = "";
     document.body.classList.remove("print-unlocked");
-    if (el("print-results")) el("print-results").disabled = true;
     if (el("save-status")) el("save-status").textContent = "";
     if (el("save-results")) el("save-results").textContent = "Submit & view my results";
     updateResultsAccess(false);
@@ -281,7 +280,7 @@
       </article>`;
     }).join("");
     restoreResponseForm();
-    updatePrintLock();
+    updateSubmissionGate();
   }
 
   function responsePayload() {
@@ -302,13 +301,11 @@
     return JSON.stringify({ answers: state.answers, shortlist: state.shortlist, context: state.context });
   }
 
-  async function submitResponse({ manual = false } = {}) {
+  async function submitResponse() {
     const saveButton = el("save-results");
-    if (manual) {
-      saveButton.disabled = true;
-      saveButton.textContent = "Saving…";
-      el("save-status").textContent = "Saving your results…";
-    }
+    saveButton.disabled = true;
+    saveButton.textContent = "Submitting…";
+    el("save-status").textContent = "Submitting your results…";
     try {
       const response = await fetch(`${SUPABASE_URL}/rest/v1/rpc/save_card_sort_response`, {
         method: "POST",
@@ -320,29 +317,18 @@
         body: JSON.stringify(responsePayload())
       });
       if (!response.ok) throw new Error("save failed");
-      if (manual) {
-        state.submittedFingerprint = currentFingerprint();
-        saveState();
-        updatePrintLock();
-        el("save-status").textContent = "Results submitted. Your exploration list is ready.";
-        saveButton.textContent = "Update submitted information";
-        el("results-content").scrollIntoView({ behavior: "smooth", block: "start" });
-      } else if (state.submittedFingerprint !== currentFingerprint()) {
-        el("save-status").textContent = "Anonymous card choices saved. Add optional context and save to enable printing.";
-      }
+      state.submittedFingerprint = currentFingerprint();
+      saveState();
+      el("save-status").textContent = "Results submitted. Your exploration list is ready.";
+      updateSubmissionGate();
+      el("results-content").scrollIntoView({ behavior: "smooth", block: "start" });
       return true;
     } catch {
-      if (manual || state.submittedFingerprint !== currentFingerprint()) {
-        el("save-status").textContent = manual
-          ? "We couldn't save your results. Check your connection and try again; your choices are still on this device."
-          : "Your anonymous results have not saved yet. Use the button below to try again.";
-      }
+      el("save-status").textContent = "We couldn't submit your results. Check your connection and try again; your choices are still on this device.";
       return false;
     } finally {
-      if (manual) {
-        saveButton.disabled = false;
-        if (state.submittedFingerprint !== currentFingerprint()) saveButton.textContent = "Submit & view my results";
-      }
+      saveButton.disabled = false;
+      if (state.submittedFingerprint !== currentFingerprint()) saveButton.textContent = "Submit & view my results";
     }
   }
 
@@ -358,16 +344,15 @@
   function updateResultsAccess(unlocked) {
     if (!el("results-content")) return;
     el("results-content").hidden = !unlocked;
-    el("action-buttons").hidden = !unlocked;
+    el("submission-panel").hidden = unlocked;
     el("results-heading").textContent = unlocked ? "Your helping professions exploration list" : "One last step";
     el("results-intro").textContent = unlocked
       ? "Use this as a starting point—not a final decision. Notice what repeats, then investigate the careers and experiences that stand out."
       : "Add any optional context below. Your patterns and exploration list will appear after you submit.";
   }
 
-  function updatePrintLock() {
+  function updateSubmissionGate() {
     const unlocked = Boolean(state.submittedFingerprint) && state.submittedFingerprint === currentFingerprint();
-    el("print-results").disabled = !unlocked;
     document.body.classList.toggle("print-unlocked", unlocked);
     updateResultsAccess(unlocked);
   }
@@ -457,21 +442,17 @@
   });
   el("edit-shortlist").addEventListener("click", () => { renderPatterns(); showView("patterns"); });
   el("copy-results").addEventListener("click", copyResults);
+  el("print-results").addEventListener("click", () => window.print());
   el("response-form").addEventListener("submit", async event => {
     event.preventDefault();
     updateContext();
-    await submitResponse({ manual: true });
+    await submitResponse();
   });
   ["student-major", "usage-context", "course-group"].forEach(id => {
     el(id).addEventListener("input", updateContext);
     el(id).addEventListener("change", updateContext);
   });
-  el("print-results").addEventListener("click", () => {
-    updatePrintLock();
-    if (el("print-results").disabled) return;
-    window.print();
-  });
-  ["reset-top", "reset-bottom"].forEach(id => el(id).addEventListener("click", resetAll));
+  ["reset-top", "reset-submit", "reset-bottom"].forEach(id => el(id).addEventListener("click", resetAll));
   document.addEventListener("keydown", event => {
     if (views.sort.hidden || event.altKey || event.ctrlKey || event.metaKey || ["INPUT", "TEXTAREA", "BUTTON"].includes(document.activeElement.tagName)) return;
     if (event.key === "1") answer("not");
