@@ -6,149 +6,143 @@
   <title>Helping Professions Card Sort — Instructor Data</title>
   <meta name="robots" content="noindex,nofollow">
   <style>
-    :root{--ink:#111827;--muted:#5f6877;--line:#d8dee8;--panel:#fff;--soft:#f5f7fa;--gold:#ffcd00;--black:#000;--danger:#b42318;--success:#067647;--radius:16px;--shadow:0 10px 28px rgba(17,24,39,.08)}
-    *{box-sizing:border-box} body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--soft);line-height:1.45} button,input,select{font:inherit} button{cursor:pointer}
-    .shell{width:min(1180px,calc(100% - 28px));margin:28px auto 56px}.brandbar{background:#000;color:#fff;padding:14px 18px;border-radius:14px 14px 0 0;font-size:.85rem;font-weight:700;letter-spacing:.05em}
-    header{background:#fff;border:1px solid var(--line);border-top:none;padding:26px;border-radius:0 0 var(--radius) var(--radius);box-shadow:var(--shadow)}h1,h2,h3,p{margin-top:0}h1{margin-bottom:8px;font-size:clamp(1.7rem,4vw,2.4rem)}h2{font-size:1.3rem;margin-bottom:14px}h3{font-size:1rem;margin-bottom:8px}.lede{color:var(--muted);margin-bottom:0;max-width:780px}
-    .panel{margin-top:18px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}.auth-grid,.toolbar{display:grid;grid-template-columns:minmax(220px,1fr) auto;gap:12px;align-items:end}.toolbar{grid-template-columns:minmax(240px,1fr) auto auto}label{display:block;font-weight:700;margin-bottom:6px}input,select{width:100%;min-height:44px;padding:10px 12px;border:1px solid #aeb7c4;border-radius:9px;background:#fff;color:var(--ink)}input:focus,select:focus,button:focus-visible{outline:3px solid rgba(255,205,0,.55);outline-offset:2px}
-    .btn{border:1px solid #000;border-radius:9px;min-height:44px;padding:10px 15px;font-weight:700;background:#fff;color:#000}.btn.primary{background:#000;color:#fff}.btn.gold{background:var(--gold);color:#111;border-color:#111}.btn.subtle{border-color:var(--line)}.btn:disabled{opacity:.45;cursor:not-allowed}.status{min-height:1.5em;margin-top:10px;font-size:.94rem;color:var(--muted)}.status.error{color:var(--danger);font-weight:700}.status.success{color:var(--success);font-weight:700}.hidden{display:none!important}
-    .summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:18px 0}.metric{border:1px solid var(--line);border-radius:12px;padding:16px;background:#fff}.metric .value{display:block;font-size:1.8rem;font-weight:800;line-height:1.1;margin-bottom:5px}.metric .label{color:var(--muted);font-size:.9rem}.section-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;margin-top:18px}.card{border:1px solid var(--line);border-radius:14px;padding:18px;background:#fff}.note{background:#fff8d6;border-left:5px solid var(--gold);padding:12px 14px;border-radius:8px;margin:12px 0 0}.table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:.94rem}th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}th{font-size:.84rem;color:#4b5563}td.num,th.num{text-align:right;white-space:nowrap}.bar{height:10px;display:flex;width:100%;min-width:130px;border-radius:999px;overflow:hidden;background:#eef1f5;margin-top:5px}.bar .yes{background:#111827}.bar .maybe{background:#9ca3af}.legend{display:flex;gap:14px;flex-wrap:wrap;color:var(--muted);font-size:.85rem;margin:2px 0 12px}.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px}.dot.yes{background:#111827}.dot.maybe{background:#9ca3af}.rank{display:inline-flex;width:26px;height:26px;border-radius:50%;align-items:center;justify-content:center;background:#111827;color:#fff;font-weight:800;font-size:.82rem;margin-right:8px;flex:0 0 auto}.rank-row{display:flex;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--line)}.rank-row:last-child{border-bottom:0}.rank-main{flex:1}.rank-main strong{display:block}.muted{color:var(--muted)}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.course-count{font-weight:700;margin:4px 0 0}footer{color:var(--muted);font-size:.86rem;padding:18px 4px}
-    @media(max-width:820px){.summary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.section-grid{grid-template-columns:1fr}.toolbar{grid-template-columns:1fr}}@media(max-width:600px){.shell{width:min(100% - 18px,1180px);margin-top:12px}header,.panel{padding:16px}.auth-grid{grid-template-columns:1fr}.summary-grid{grid-template-columns:1fr 1fr}.metric .value{font-size:1.45rem}}@media print{
-      @page{size:letter portrait;margin:.45in}
+    :root{
+      --ink:#111827;--muted:#5f6877;--line:#d8dee8;--panel:#fff;--soft:#f5f7fa;
+      --gold:#ffcd00;--black:#000;--danger:#b42318;--success:#067647;
+      --radius:16px;--shadow:0 10px 28px rgba(17,24,39,.08)
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--soft);line-height:1.45}
+    button,input,select{font:inherit}
+    button{cursor:pointer}
+    .shell{width:min(1180px,calc(100% - 28px));margin:28px auto 56px}
+    .brandbar{background:#000;color:#fff;padding:14px 18px;border-radius:14px 14px 0 0;font-size:.85rem;font-weight:700;letter-spacing:.05em}
+    header{background:#fff;border:1px solid var(--line);border-top:none;padding:26px;border-radius:0 0 var(--radius) var(--radius);box-shadow:var(--shadow)}
+    h1,h2,h3,p{margin-top:0}
+    h1{margin-bottom:8px;font-size:clamp(1.7rem,4vw,2.4rem)}
+    h2{font-size:1.3rem;margin-bottom:14px}
+    h3{font-size:1rem;margin-bottom:8px}
+    .lede{color:var(--muted);margin-bottom:0;max-width:820px}
+    .panel{margin-top:18px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+    .auth-grid{display:grid;grid-template-columns:minmax(220px,1fr) auto;gap:12px;align-items:end}
+    .filter-grid{display:grid;grid-template-columns:1.25fr 1.25fr .8fr .8fr;gap:12px;align-items:end}
+    .filter-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    label{display:block;font-weight:700;margin-bottom:6px}
+    input,select{width:100%;min-height:44px;padding:10px 12px;border:1px solid #aeb7c4;border-radius:9px;background:#fff;color:var(--ink)}
+    input:focus,select:focus,button:focus-visible{outline:3px solid rgba(255,205,0,.55);outline-offset:2px}
+    .btn{border:1px solid #000;border-radius:9px;min-height:44px;padding:10px 15px;font-weight:700;background:#fff;color:#000}
+    .btn.primary{background:#000;color:#fff}
+    .btn.gold{background:var(--gold);color:#111;border-color:#111}
+    .btn.subtle{border-color:var(--line)}
+    .btn:disabled{opacity:.45;cursor:not-allowed}
+    .status{min-height:1.5em;margin-top:10px;font-size:.94rem;color:var(--muted)}
+    .status.error{color:var(--danger);font-weight:700}
+    .status.success{color:var(--success);font-weight:700}
+    .hidden{display:none!important}
+    .summary-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:18px 0}
+    .metric{border:1px solid var(--line);border-radius:12px;padding:16px;background:#fff}
+    .metric .value{display:block;font-size:1.8rem;font-weight:800;line-height:1.1;margin-bottom:5px}
+    .metric .label{color:var(--muted);font-size:.9rem}
+    .section-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;margin-top:18px}
+    .card{border:1px solid var(--line);border-radius:14px;padding:18px;background:#fff}
+    .note{background:#fff8d6;border-left:5px solid var(--gold);padding:12px 14px;border-radius:8px;margin:12px 0 0}
+    .table-wrap{overflow-x:auto}
+    table{width:100%;border-collapse:collapse;font-size:.94rem}
+    th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+    th{font-size:.84rem;color:#4b5563}
+    td.num,th.num{text-align:right;white-space:nowrap}
+    .bar{height:10px;display:flex;width:100%;min-width:130px;border-radius:999px;overflow:hidden;background:#eef1f5;margin-top:5px}
+    .bar .yes{background:#111827}
+    .bar .maybe{background:#9ca3af}
+    .legend{display:flex;gap:14px;flex-wrap:wrap;color:var(--muted);font-size:.85rem;margin:2px 0 12px}
+    .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px}
+    .dot.yes{background:#111827}
+    .dot.maybe{background:#9ca3af}
+    .rank{display:inline-flex;width:26px;height:26px;border-radius:50%;align-items:center;justify-content:center;background:#111827;color:#fff;font-weight:800;font-size:.82rem;margin-right:8px;flex:0 0 auto}
+    .rank-row{display:flex;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--line)}
+    .rank-row:last-child{border-bottom:0}
+    .rank-main{flex:1}
+    .rank-main strong{display:block}
+    .muted{color:var(--muted)}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .match-count{font-weight:700;margin:12px 0 0}
+    footer{color:var(--muted);font-size:.86rem;padding:18px 4px}
+
+    @media(max-width:900px){
+      .filter-grid{grid-template-columns:1fr 1fr}
+      .summary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .section-grid{grid-template-columns:1fr}
+    }
+    @media(max-width:600px){
+      .shell{width:min(100% - 18px,1180px);margin-top:12px}
+      header,.panel{padding:16px}
+      .auth-grid,.filter-grid{grid-template-columns:1fr}
+      .summary-grid{grid-template-columns:1fr 1fr}
+      .metric .value{font-size:1.45rem}
+    }
+
+    @media print{
+      @page{size:letter portrait;margin:.32in}
       *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
-      body{background:#fff;color:#111;font-size:10.5pt}
+      body{background:#fff;color:#111;font-size:8.2pt}
       .shell{width:100%;margin:0}
-      .auth-panel,.toolbar-panel,.actions,.status,footer{display:none!important}
+      .auth-panel,.toolbar-panel,.actions,.status,footer,.context-card{display:none!important}
 
       .brandbar{
-        background:#000!important;
-        color:#fff!important;
-        border-radius:0;
-        padding:9px 14px;
-        font-size:8.5pt;
-        letter-spacing:.08em
+        background:#000!important;color:#fff!important;border-radius:0;
+        padding:6px 11px;font-size:7.2pt;letter-spacing:.08em
       }
-
       header{
-        border:1px solid #cfd5dd;
-        border-top:0;
-        border-radius:0 0 10px 10px;
-        padding:17px 18px 15px;
-        box-shadow:none!important;
-        margin-bottom:14px
+        border:1px solid #cfd5dd;border-top:0;border-radius:0 0 8px 8px;
+        padding:9px 12px 8px;box-shadow:none!important;margin-bottom:7px
       }
-      header h1{
-        font-size:20pt;
-        line-height:1.08;
-        margin:0 0 5px
-      }
-      header .lede{
-        font-size:9.5pt;
-        line-height:1.35;
-        color:#5b6470;
-        max-width:none
-      }
+      header h1{font-size:14.5pt;line-height:1.05;margin:0 0 3px}
+      header .lede{display:none}
 
       #report{
-        display:block!important;
-        border:0!important;
-        box-shadow:none!important;
-        padding:0!important;
-        margin:0!important
+        display:block!important;border:0!important;box-shadow:none!important;
+        padding:0!important;margin:0!important
       }
-
       #report-heading{
-        font-size:17pt;
-        margin:0 0 2px;
-        border-bottom:4px solid #ffcd00;
-        padding-bottom:7px
+        font-size:12pt;margin:0;border-bottom:3px solid #ffcd00;padding:0 0 4px
       }
-      #report-subtitle{
-        font-size:9pt;
-        margin:5px 0 12px;
-        color:#606975
-      }
+      #report-subtitle{font-size:7.2pt;margin:3px 0 6px;color:#606975;line-height:1.2}
 
       .summary-grid{
-        display:grid!important;
-        grid-template-columns:repeat(4,1fr)!important;
-        gap:7px;
-        margin:0 0 12px
+        display:grid!important;grid-template-columns:repeat(4,1fr)!important;
+        gap:5px;margin:0 0 6px
       }
       .metric{
-        padding:10px 9px;
-        border:1px solid #d4d9e1;
-        border-radius:8px;
-        background:#f7f8fa!important;
-        min-height:58px
+        padding:6px 7px;border:1px solid #d4d9e1;border-radius:6px;
+        background:#f7f8fa!important;min-height:40px
       }
-      .metric .value{
-        font-size:17pt;
-        line-height:1;
-        margin-bottom:4px
-      }
-      .metric .label{
-        font-size:7.8pt;
-        line-height:1.15;
-        color:#555f6c
-      }
+      .metric .value{font-size:12.5pt;line-height:1;margin-bottom:2px}
+      .metric .label{font-size:6.3pt;line-height:1.05;color:#555f6c}
 
       .section-grid{
-        display:grid!important;
-        grid-template-columns:1.15fr .85fr!important;
-        gap:10px;
-        margin-top:10px
+        display:grid!important;grid-template-columns:1.15fr .85fr!important;
+        gap:6px;margin-top:6px
       }
-
+      .secondary-grid{grid-template-columns:1fr!important}
       .card{
-        box-shadow:none!important;
-        border:1px solid #d4d9e1;
-        border-radius:9px;
-        padding:11px 12px;
-        margin:0;
-        break-inside:avoid;
-        page-break-inside:avoid
+        box-shadow:none!important;border:1px solid #d4d9e1;border-radius:6px;
+        padding:6px 7px;margin:0;break-inside:avoid;page-break-inside:avoid
       }
-      .card h3{
-        font-size:11.5pt;
-        margin:0 0 5px
-      }
-      .card p.muted{
-        font-size:8pt;
-        line-height:1.25;
-        margin-bottom:6px
-      }
+      .card h3{font-size:8.3pt;margin:0 0 3px}
+      .card p.muted{font-size:6.2pt;line-height:1.15;margin-bottom:3px}
+      .legend{font-size:6.1pt;margin:0 0 3px;gap:7px}
+      .dot{width:5px;height:5px}
 
-      .legend{font-size:7.7pt;margin:0 0 6px;gap:10px}
-      .dot{width:7px;height:7px}
+      table{font-size:6.3pt}
+      th,td{padding:2.7px 3px;line-height:1.1}
+      th{font-size:5.9pt}
+      .bar{height:4px;min-width:55px;margin-top:1px}
 
-      table{font-size:8.2pt}
-      th,td{padding:5px 4px}
-      th{font-size:7.4pt}
-      .bar{height:6px;min-width:80px;margin-top:3px}
-
-      .rank-row{padding:5px 0}
-      .rank{
-        width:20px;
-        height:20px;
-        font-size:7pt;
-        margin-right:6px
-      }
-      .rank-main strong{
-        font-size:8.5pt;
-        line-height:1.2
-      }
-      .rank-main .muted{
-        font-size:7.5pt;
-        line-height:1.2
-      }
-
-      #context-body th{width:34%}
-      #context-body td,#context-body th{font-size:8pt}
-
+      .rank-row{padding:2.8px 0}
+      .rank{width:15px;height:15px;font-size:5.5pt;margin-right:4px}
+      .rank-main strong{font-size:6.7pt;line-height:1.08}
+      .rank-main .muted{font-size:5.8pt;line-height:1.05}
       a{text-decoration:none;color:#111}
-
-      .section-grid:nth-of-type(2){break-inside:avoid;page-break-inside:avoid}
     }
   </style>
 </head>
@@ -157,61 +151,126 @@
     <div class="brandbar">POMERANTZ CAREER CENTER</div>
     <header>
       <h1>Helping Professions Card Sort — Instructor Data</h1>
-      <p class="lede">Choose a class to see response counts, category interest, top final choices, and high-curiosity “Maybe” areas. Download the underlying data when you need it.</p>
+      <p class="lede">Filter responses by course, major, and/or date to see category interest, top final choices, and high-curiosity “Maybe” areas. Downloads use the same filters.</p>
     </header>
 
     <section class="panel auth-panel" aria-labelledby="access-heading">
       <h2 id="access-heading">Instructor access</h2>
       <div class="auth-grid">
-        <div><label for="admin-token">Admin key</label><input id="admin-token" type="password" autocomplete="off" placeholder="Paste your Cloudflare ADMIN_TOKEN"></div>
-        <button id="connect" class="btn primary" type="button">Load courses</button>
+        <div>
+          <label for="admin-token">Admin key</label>
+          <input id="admin-token" type="password" autocomplete="off" placeholder="Paste your Cloudflare ADMIN_TOKEN">
+        </div>
+        <button id="connect" class="btn primary" type="button">Load data</button>
       </div>
-      <p class="note"><strong>Your key is not stored in GitHub.</strong> This page keeps it only in this browser tab's session storage so it can request your private class data from Cloudflare.</p>
+      <p class="note"><strong>Your key is not stored in GitHub.</strong> It is kept only in this browser tab's session storage while you use the dashboard.</p>
       <div id="auth-status" class="status" role="status" aria-live="polite"></div>
     </section>
 
-    <section id="toolbar-panel" class="panel toolbar-panel hidden" aria-labelledby="course-heading">
-      <h2 id="course-heading">Choose a class</h2>
-      <div class="toolbar">
-        <div><label for="course-select">Course / group</label><select id="course-select"></select><div id="course-count" class="course-count"></div></div>
-        <button id="load-course" class="btn gold" type="button">View class summary</button>
+    <section id="toolbar-panel" class="panel toolbar-panel hidden" aria-labelledby="filter-heading">
+      <h2 id="filter-heading">Filter responses</h2>
+      <div class="filter-grid">
+        <div>
+          <label for="course-select">Course / group</label>
+          <select id="course-select"></select>
+        </div>
+        <div>
+          <label for="major-select">Major</label>
+          <select id="major-select"></select>
+        </div>
+        <div>
+          <label for="date-from">From date</label>
+          <input id="date-from" type="date">
+        </div>
+        <div>
+          <label for="date-to">To date</label>
+          <input id="date-to" type="date">
+        </div>
+      </div>
+      <div class="filter-actions">
+        <button id="apply-filters" class="btn gold" type="button">View filtered summary</button>
+        <button id="reset-filters" class="btn" type="button">Reset filters</button>
         <button id="clear-key" class="btn subtle" type="button">Clear admin key</button>
       </div>
-      <div id="course-status" class="status" role="status" aria-live="polite"></div>
+      <div id="match-count" class="match-count"></div>
+      <div id="filter-status" class="status" role="status" aria-live="polite"></div>
     </section>
 
     <section id="report" class="panel hidden" aria-labelledby="report-heading">
-      <h2 id="report-heading">Class snapshot</h2><p id="report-subtitle" class="muted"></p>
+      <h2 id="report-heading">Response snapshot</h2>
+      <p id="report-subtitle" class="muted"></p>
+
       <div class="summary-grid">
         <div class="metric"><span id="metric-responses" class="value">—</span><span class="label">Responses</span></div>
         <div class="metric"><span id="metric-interested" class="value">—</span><span class="label">Interested responses</span></div>
         <div class="metric"><span id="metric-maybe" class="value">—</span><span class="label">Maybe responses</span></div>
         <div class="metric"><span id="metric-selected" class="value">—</span><span class="label">Final choices selected</span></div>
       </div>
+
       <div class="section-grid">
-        <section class="card"><h3>Interest by category</h3><div class="legend"><span><span class="dot yes"></span>Interested</span><span><span class="dot maybe"></span>Maybe</span></div><div class="table-wrap"><table><thead><tr><th>Category</th><th class="num">Interested</th><th class="num">Maybe</th><th>Share of category responses</th></tr></thead><tbody id="category-body"></tbody></table></div></section>
-        <section class="card"><h3>Top final choices</h3><p class="muted">Percent is the share of students who selected each activity as one of their final choices.</p><div id="top-choices"></div></section>
+        <section class="card">
+          <h3>Interest by category</h3>
+          <div class="legend">
+            <span><span class="dot yes"></span>Interested</span>
+            <span><span class="dot maybe"></span>Maybe</span>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Category</th>
+                  <th class="num">Interested</th>
+                  <th class="num">Maybe</th>
+                  <th>Share of category responses</th>
+                </tr>
+              </thead>
+              <tbody id="category-body"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="card">
+          <h3>Top final choices</h3>
+          <p class="muted">Percent is the share of students selecting each activity as one of their final choices.</p>
+          <div id="top-choices"></div>
+        </section>
       </div>
-      <div class="section-grid">
-        <section class="card"><h3>Maybe stretches</h3><p class="muted">Activities where “Maybe” was at least as common as “Interested,” sorted by the share of students choosing Maybe.</p><div id="maybe-stretches"></div></section>
-        <section class="card"><h3>Response context</h3><div class="table-wrap"><table><tbody id="context-body"></tbody></table></div></section>
+
+      <div class="section-grid secondary-grid">
+        <section class="card">
+          <h3>Top 5 Maybe stretches</h3>
+          <p class="muted">Activities where “Maybe” was at least as common as “Interested,” sorted by the share of students choosing Maybe.</p>
+          <div id="maybe-stretches"></div>
+        </section>
+
+        <section class="card context-card">
+          <h3>Response context</h3>
+          <div class="table-wrap">
+            <table><tbody id="context-body"></tbody></table>
+          </div>
+        </section>
       </div>
+
       <div class="actions">
-        <button id="download-responses" class="btn primary" type="button">Download full responses CSV</button>
-        <button id="download-cards" class="btn" type="button">Download card-by-card CSV</button>
-        <button id="download-finals" class="btn" type="button">Download final choices CSV</button>
-        <button id="print-report" class="btn" type="button">Print / save snapshot</button>
+        <button id="download-responses" class="btn primary" type="button">Download filtered responses CSV</button>
+        <button id="download-cards" class="btn" type="button">Download filtered card-by-card CSV</button>
+        <button id="download-finals" class="btn" type="button">Download filtered final choices CSV</button>
+        <button id="print-report" class="btn" type="button">Print / save one-page snapshot</button>
       </div>
       <div id="report-status" class="status" role="status" aria-live="polite"></div>
     </section>
+
     <footer>Data are retrieved from the Helping Professions Card Sort Cloudflare D1 backend. No student names or email addresses are displayed by this dashboard.</footer>
   </main>
+
   <script src="cards-data.js"></script>
   <script>
   (() => {
     "use strict";
+
     const API_BASE = "https://helping-cards-api.kaitlyn-d-bailey.workers.dev";
     const TOKEN_KEY = "helping-cards-admin-token";
+
     const categoryLabels = {
       "Emotional Support & Mental Health":"Emotional & Mental Health Support",
       "Youth, Families, & Education":"Youth, Families & Learning",
@@ -221,71 +280,697 @@
       "Everyday Navigation & Resource Access":"Resources & Life Navigation",
       "Behind-the-Scenes Helpers":"Programs, Research & Systems"
     };
+
     const cards = Array.isArray(window.CARD_DATA) ? window.CARD_DATA : [];
     const cardById = new Map(cards.map(card => [String(card.id), card]));
-    let activeCourse = "";
-    let activeNormalized = null;
+
+    let allData = null;
+    let activeData = null;
+    let activeFilterLabel = "All responses";
+
     const el = id => document.getElementById(id);
-    function setStatus(id,message="",type=""){const n=el(id);n.textContent=message;n.className=`status${type?" "+type:""}`}
-    function token(){return el("admin-token").value.trim()}
-    function authHeaders(){return {Authorization:`Bearer ${token()}`}}
-    async function apiGet(path){const r=await fetch(`${API_BASE}${path}`,{method:"GET",headers:authHeaders()});const b=await r.json().catch(()=>({}));if(!r.ok||!b.ok){throw new Error(r.status===401?"Admin key was not accepted.":(b.error||`Request failed (${r.status})`))}return b}
-    function parseJson(v,f){if(v==null||v==="")return f;if(typeof v==="object")return v;try{return JSON.parse(v)}catch{return f}}
-    function choiceLabel(v){const x=String(v??"").toLowerCase().trim();if(["interested","yes","3"].includes(x))return"Interested";if(["maybe","2"].includes(x))return"Maybe";if(["not","not for me","not_for_me","no","1"].includes(x))return"Not for me";return String(v??"")}
-    function normalizePayload(body){
-      if(Array.isArray(body.responses)){
-        const responseSummary=[],cardChoices=[],finalSelections=[],categoryScores=[];
-        body.responses.forEach(row=>{
-          const answers=parseJson(row.answers_json,{}), shortlist=parseJson(row.shortlist_json,[]), scores=parseJson(row.category_scores_json,{});
-          responseSummary.push({response_id:row.id,session_id:row.session_id,major:row.major||"",usage_context:row.usage_context||"",course_group:row.course_group||"",interested_count:Number(row.interested_count||0),maybe_count:Number(row.maybe_count||0),not_count:Number(row.not_count||0),selected_count:Number(row.selected_count||0),schema_version:row.schema_version||"",created_at:row.created_at||"",updated_at:row.updated_at||""});
-          Object.entries(answers||{}).forEach(([cardId,choice])=>cardChoices.push({response_id:row.id,session_id:row.session_id,course_group:row.course_group||"",card_id:String(cardId),choice:choiceLabel(choice)}));
-          (Array.isArray(shortlist)?shortlist:[]).forEach((item,index)=>{const cardId=item&&typeof item==="object"?(item.id??item.card_id??item.cardId??""):item;finalSelections.push({response_id:row.id,session_id:row.session_id,course_group:row.course_group||"",selection_rank:index+1,card_id:String(cardId)})});
-          if(scores&&typeof scores==="object"&&!Array.isArray(scores))Object.entries(scores).forEach(([category,value])=>categoryScores.push({response_id:row.id,category,value}));
-        });
-        return {responseSummary,cardChoices,finalSelections,categoryScores};
+
+    function setStatus(id, message = "", type = "") {
+      const node = el(id);
+      node.textContent = message;
+      node.className = `status${type ? " " + type : ""}`;
+    }
+
+    function token() {
+      return el("admin-token").value.trim();
+    }
+
+    function authHeaders() {
+      return { "Authorization": `Bearer ${token()}` };
+    }
+
+    async function apiGet(path) {
+      const response = await fetch(`${API_BASE}${path}`, {
+        method: "GET",
+        headers: authHeaders()
+      });
+
+      const body = await response.json().catch(() => ({}));
+
+      if (!response.ok || !body.ok) {
+        throw new Error(
+          response.status === 401
+            ? "Admin key was not accepted."
+            : body.error || `Request failed (${response.status})`
+        );
       }
-      return {responseSummary:Array.isArray(body.response_summary)?body.response_summary:[],cardChoices:Array.isArray(body.card_choices)?body.card_choices:[],finalSelections:Array.isArray(body.final_selections)?body.final_selections:[],categoryScores:Array.isArray(body.category_scores)?body.category_scores:[]};
+
+      return body;
     }
-    function pct(v){return `${Math.round(v*100)}%`}
-    function escapeHtml(v){const d=document.createElement("div");d.textContent=String(v??"");return d.innerHTML}
-    function cardName(id){return cardById.get(String(id))?.prompt||String(id)}
-    function cardCategory(id){return cardById.get(String(id))?.categoryA||"Unknown"}
-    function formatDate(v){if(!v)return"—";const d=new Date(v.endsWith?.("Z")?v:v+"Z");return Number.isNaN(d.getTime())?v:d.toLocaleString()}
-    async function loadCourses(){
-      if(!token()){setStatus("auth-status","Paste your admin key first.","error");return}
-      el("connect").disabled=true;setStatus("auth-status","Loading courses…");
-      try{
-        const body=await apiGet("/api/admin/classes");sessionStorage.setItem(TOKEN_KEY,token());const classes=Array.isArray(body.classes)?body.classes:[];if(!classes.length)throw new Error("No saved class responses were found yet.");
-        const select=el("course-select");select.innerHTML="";classes.forEach(item=>{const o=document.createElement("option");o.value=item.course_group;o.textContent=`${item.course_group} — ${item.responses} response${Number(item.responses)===1?"":"s"}`;o.dataset.count=String(item.responses);select.appendChild(o)});
-        el("toolbar-panel").classList.remove("hidden");updateCourseCount();setStatus("auth-status",`${classes.length} course/group option${classes.length===1?"":"s"} loaded.`,"success");
-      }catch(error){setStatus("auth-status",error.message,"error");el("toolbar-panel").classList.add("hidden");el("report").classList.add("hidden")}finally{el("connect").disabled=false}
+
+    function parseJson(value, fallback) {
+      if (value == null || value === "") return fallback;
+      if (typeof value === "object") return value;
+      try { return JSON.parse(value); }
+      catch { return fallback; }
     }
-    function updateCourseCount(){const o=el("course-select").selectedOptions[0];if(!o){el("course-count").textContent="";return}const c=Number(o.dataset.count||0);el("course-count").textContent=`${c} saved response${c===1?"":"s"}`}
-    async function loadSelectedCourse(){const course=el("course-select").value;if(!course)return;el("load-course").disabled=true;setStatus("course-status","Loading class data…");try{const q=new URLSearchParams({course}).toString();const body=await apiGet(`/api/admin/responses?${q}`);activeCourse=course;activeNormalized=normalizePayload(body);renderReport(activeNormalized,body.response_count);setStatus("course-status","Class data loaded.","success")}catch(error){setStatus("course-status",error.message,"error");el("report").classList.add("hidden")}finally{el("load-course").disabled=false}}
-    function renderReport(data,responseCountFromApi){
-      const responses=data.responseSummary,cardChoices=data.cardChoices,finalSelections=data.finalSelections;const responseCount=Number(responseCountFromApi??responses.length);
-      const interested=cardChoices.filter(r=>choiceLabel(r.choice)==="Interested").length, maybe=cardChoices.filter(r=>choiceLabel(r.choice)==="Maybe").length, not=cardChoices.filter(r=>choiceLabel(r.choice)==="Not for me").length, all=interested+maybe+not;
-      el("metric-responses").textContent=responseCount.toLocaleString();el("metric-interested").textContent=all?pct(interested/all):"—";el("metric-maybe").textContent=all?pct(maybe/all):"—";el("metric-selected").textContent=finalSelections.length.toLocaleString();
-      const dates=responses.map(r=>r.updated_at||r.created_at).filter(Boolean).sort();el("report-heading").textContent=activeCourse;el("report-subtitle").textContent=`${responseCount} class response${responseCount===1?"":"s"} • ${dates.length?`${formatDate(dates[0])} to ${formatDate(dates[dates.length-1])}`:"No date range available"}`;
-      renderCategoryTable(cardChoices);renderTopChoices(finalSelections,responseCount);renderMaybeStretches(cardChoices,responseCount);renderContext(responses);el("report").classList.remove("hidden");el("report").scrollIntoView({behavior:"smooth",block:"start"});
+
+    function choiceLabel(value) {
+      const v = String(value ?? "").toLowerCase().trim();
+      if (["interested","yes","3"].includes(v)) return "Interested";
+      if (["maybe","2"].includes(v)) return "Maybe";
+      if (["not","not for me","not_for_me","no","1"].includes(v)) return "Not for me";
+      return String(value ?? "");
     }
-    function renderCategoryTable(cardChoices){
-      const stats=new Map();cards.forEach(card=>{if(!stats.has(card.categoryA))stats.set(card.categoryA,{interested:0,maybe:0,not:0,total:0})});
-      cardChoices.forEach(row=>{const cat=cardCategory(row.card_id);if(!stats.has(cat))stats.set(cat,{interested:0,maybe:0,not:0,total:0});const s=stats.get(cat),lab=choiceLabel(row.choice);if(lab==="Interested")s.interested++;else if(lab==="Maybe")s.maybe++;else if(lab==="Not for me")s.not++;s.total++});
-      const rows=[...stats.entries()].filter(([,s])=>s.total>0).sort((a,b)=>((b[1].interested*2+b[1].maybe)/Math.max(b[1].total*2,1))-((a[1].interested*2+a[1].maybe)/Math.max(a[1].total*2,1)));
-      el("category-body").innerHTML=rows.map(([name,s])=>{const y=s.interested/s.total,m=s.maybe/s.total;return `<tr><td><strong>${escapeHtml(categoryLabels[name]||name)}</strong></td><td class="num">${pct(y)}</td><td class="num">${pct(m)}</td><td><div class="bar" aria-label="${pct(y)} interested, ${pct(m)} maybe"><span class="yes" style="width:${y*100}%"></span><span class="maybe" style="width:${m*100}%"></span></div></td></tr>`}).join("")||`<tr><td colspan="4">No card-level response data found.</td></tr>`;
+
+    function normalizePayload(body) {
+      if (Array.isArray(body.responses)) {
+        const responseSummary = [];
+        const cardChoices = [];
+        const finalSelections = [];
+        const categoryScores = [];
+
+        body.responses.forEach(row => {
+          const answers = parseJson(row.answers_json, {});
+          const shortlist = parseJson(row.shortlist_json, []);
+          const scores = parseJson(row.category_scores_json, {});
+
+          responseSummary.push({
+            response_id: row.id,
+            session_id: row.session_id,
+            major: row.major || "",
+            usage_context: row.usage_context || "",
+            course_group: row.course_group || "",
+            interested_count: Number(row.interested_count || 0),
+            maybe_count: Number(row.maybe_count || 0),
+            not_count: Number(row.not_count || 0),
+            selected_count: Number(row.selected_count || 0),
+            schema_version: row.schema_version || "",
+            created_at: row.created_at || "",
+            updated_at: row.updated_at || ""
+          });
+
+          Object.entries(answers || {}).forEach(([cardId, choice]) => {
+            cardChoices.push({
+              response_id: row.id,
+              session_id: row.session_id,
+              course_group: row.course_group || "",
+              card_id: String(cardId),
+              choice: choiceLabel(choice)
+            });
+          });
+
+          (Array.isArray(shortlist) ? shortlist : []).forEach((item, index) => {
+            const cardId =
+              item && typeof item === "object"
+                ? item.id ?? item.card_id ?? item.cardId ?? ""
+                : item;
+
+            finalSelections.push({
+              response_id: row.id,
+              session_id: row.session_id,
+              course_group: row.course_group || "",
+              selection_rank: index + 1,
+              card_id: String(cardId)
+            });
+          });
+
+          if (scores && typeof scores === "object" && !Array.isArray(scores)) {
+            Object.entries(scores).forEach(([category, value]) => {
+              categoryScores.push({
+                response_id: row.id,
+                category,
+                value
+              });
+            });
+          }
+        });
+
+        return { responseSummary, cardChoices, finalSelections, categoryScores };
+      }
+
+      return {
+        responseSummary: Array.isArray(body.response_summary) ? body.response_summary : [],
+        cardChoices: Array.isArray(body.card_choices) ? body.card_choices : [],
+        finalSelections: Array.isArray(body.final_selections) ? body.final_selections : [],
+        categoryScores: Array.isArray(body.category_scores) ? body.category_scores : []
+      };
     }
-    function renderTopChoices(finalSelections,responseCount){const counts=new Map();finalSelections.forEach(r=>{const id=String(r.card_id);counts.set(id,(counts.get(id)||0)+1)});const top=[...counts.entries()].sort((a,b)=>b[1]-a[1]).slice(0,10);el("top-choices").innerHTML=top.map(([id,count],i)=>`<div class="rank-row"><span class="rank">${i+1}</span><div class="rank-main"><strong>${escapeHtml(cardName(id))}</strong><span class="muted">${pct(responseCount?count/responseCount:0)} of students • ${count} selection${count===1?"":"s"}</span></div></div>`).join("")||`<p class="muted">No final-choice data found.</p>`}
-    function renderMaybeStretches(cardChoices,responseCount){const by=new Map();cardChoices.forEach(r=>{const id=String(r.card_id);if(!by.has(id))by.set(id,{interested:0,maybe:0,not:0});const s=by.get(id),lab=choiceLabel(r.choice);if(lab==="Interested")s.interested++;else if(lab==="Maybe")s.maybe++;else if(lab==="Not for me")s.not++});const items=[...by.entries()].map(([id,s])=>({id,maybe:s.maybe,interested:s.interested,mr:responseCount?s.maybe/responseCount:0,ir:responseCount?s.interested/responseCount:0})).filter(x=>x.maybe>0&&x.maybe>=x.interested).sort((a,b)=>b.mr-a.mr||b.maybe-a.maybe).slice(0,8);el("maybe-stretches").innerHTML=items.map(x=>`<div class="rank-row"><div class="rank-main"><strong>${escapeHtml(cardName(x.id))}</strong><span class="muted">${pct(x.mr)} Maybe • ${pct(x.ir)} Interested</span></div></div>`).join("")||`<p class="muted">No activities currently meet the “Maybe stretch” rule.</p>`}
-    function renderContext(responses){const majors=new Map(),contexts=new Map();responses.forEach(r=>{const m=String(r.major||"").trim(),c=String(r.usage_context||"").trim();if(m)majors.set(m,(majors.get(m)||0)+1);if(c)contexts.set(c,(contexts.get(c)||0)+1)});const topM=[...majors.entries()].sort((a,b)=>b[1]-a[1]).slice(0,5),topC=[...contexts.entries()].sort((a,b)=>b[1]-a[1]).slice(0,5);const first=responses.map(r=>r.created_at).filter(Boolean).sort()[0],last=responses.map(r=>r.updated_at||r.created_at).filter(Boolean).sort().at(-1);el("context-body").innerHTML=`<tr><th>Course / group</th><td>${escapeHtml(activeCourse)}</td></tr><tr><th>First response</th><td>${escapeHtml(formatDate(first))}</td></tr><tr><th>Most recent update</th><td>${escapeHtml(formatDate(last))}</td></tr><tr><th>Major information</th><td>${escapeHtml(topM.length?topM.map(([n,c])=>`${n} (${c})`).join(", "):"No optional major information")}</td></tr><tr><th>Use context</th><td>${escapeHtml(topC.length?topC.map(([n,c])=>`${n} (${c})`).join(", "):"No optional use-context information")}</td></tr>`}
-    function csvEscape(v){const t=v==null?"":String(v);return /[",\n\r]/.test(t)?`"${t.replaceAll('"','""')}"`:t}
-    function downloadCsv(filename,rows,columns){const lines=[columns.map(c=>csvEscape(c.label)).join(","),...rows.map(r=>columns.map(c=>csvEscape(c.value(r))).join(","))];const blob=new Blob(["\uFEFF"+lines.join("\r\n")],{type:"text/csv;charset=utf-8"});const url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=filename;document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url)}
-    function safeFilename(v){return String(v||"class").trim().replace(/[^a-z0-9-_]+/gi,"-").replace(/^-+|-+$/g,"").slice(0,80)||"class"}
-    function downloadResponses(){const rows=activeNormalized?.responseSummary||[];downloadCsv(`helping-cards-${safeFilename(activeCourse)}-responses.csv`,rows,[{label:"Response ID",value:r=>r.response_id},{label:"Anonymous Session ID",value:r=>r.session_id},{label:"Major",value:r=>r.major},{label:"Use Context",value:r=>r.usage_context},{label:"Course / Group",value:r=>r.course_group},{label:"Interested",value:r=>r.interested_count},{label:"Maybe",value:r=>r.maybe_count},{label:"Not for Me",value:r=>r.not_count},{label:"Final Selections",value:r=>r.selected_count},{label:"First Submitted",value:r=>r.created_at},{label:"Last Updated",value:r=>r.updated_at},{label:"Schema Version",value:r=>r.schema_version||""}])}
-    function downloadCards(){const rows=activeNormalized?.cardChoices||[];downloadCsv(`helping-cards-${safeFilename(activeCourse)}-card-choices.csv`,rows,[{label:"Response ID",value:r=>r.response_id},{label:"Anonymous Session ID",value:r=>r.session_id||""},{label:"Course / Group",value:r=>r.course_group||activeCourse},{label:"Card ID",value:r=>r.card_id},{label:"Activity",value:r=>cardName(r.card_id)},{label:"Category",value:r=>categoryLabels[cardCategory(r.card_id)]||cardCategory(r.card_id)},{label:"Choice",value:r=>choiceLabel(r.choice)}])}
-    function downloadFinals(){const rows=activeNormalized?.finalSelections||[];downloadCsv(`helping-cards-${safeFilename(activeCourse)}-final-choices.csv`,rows,[{label:"Response ID",value:r=>r.response_id},{label:"Anonymous Session ID",value:r=>r.session_id||""},{label:"Course / Group",value:r=>r.course_group||activeCourse},{label:"Selection Rank",value:r=>r.selection_rank},{label:"Card ID",value:r=>r.card_id},{label:"Activity",value:r=>cardName(r.card_id)},{label:"Category",value:r=>categoryLabels[cardCategory(r.card_id)]||cardCategory(r.card_id)}])}
-    el("connect").addEventListener("click",loadCourses);el("course-select").addEventListener("change",updateCourseCount);el("load-course").addEventListener("click",loadSelectedCourse);el("clear-key").addEventListener("click",()=>{sessionStorage.removeItem(TOKEN_KEY);el("admin-token").value="";el("toolbar-panel").classList.add("hidden");el("report").classList.add("hidden");setStatus("auth-status","Admin key cleared from this browser tab.","success")});el("download-responses").addEventListener("click",downloadResponses);el("download-cards").addEventListener("click",downloadCards);el("download-finals").addEventListener("click",downloadFinals);el("print-report").addEventListener("click",()=>window.print());
-    const savedToken=sessionStorage.getItem(TOKEN_KEY);if(savedToken){el("admin-token").value=savedToken;loadCourses()}
+
+    function escapeHtml(value) {
+      const div = document.createElement("div");
+      div.textContent = String(value ?? "");
+      return div.innerHTML;
+    }
+
+    function pct(value) {
+      return `${Math.round(value * 100)}%`;
+    }
+
+    function cardName(cardId) {
+      return cardById.get(String(cardId))?.prompt || String(cardId);
+    }
+
+    function cardCategory(cardId) {
+      return cardById.get(String(cardId))?.categoryA || "Unknown";
+    }
+
+    function dateOnly(value) {
+      const text = String(value || "").trim();
+      const match = text.match(/^(\d{4}-\d{2}-\d{2})/);
+      if (match) return match[1];
+
+      const d = new Date(text);
+      if (Number.isNaN(d.getTime())) return "";
+      return d.toISOString().slice(0, 10);
+    }
+
+    function formatDate(value) {
+      if (!value) return "—";
+      const normalized = String(value).includes("T")
+        ? String(value)
+        : String(value).replace(" ", "T") + "Z";
+      const d = new Date(normalized);
+      return Number.isNaN(d.getTime()) ? String(value) : d.toLocaleString();
+    }
+
+    function normalizeText(value) {
+      return String(value || "").trim().replace(/\s+/g, " ");
+    }
+
+    function majorKey(value) {
+      return normalizeText(value).toLocaleLowerCase();
+    }
+
+    function uniqueSorted(values) {
+      return [...new Set(values.map(normalizeText).filter(Boolean))]
+        .sort((a, b) => a.localeCompare(b, undefined, { sensitivity: "base" }));
+    }
+
+    function populateFilters() {
+      const responses = allData?.responseSummary || [];
+
+      const courses = uniqueSorted(responses.map(r => r.course_group));
+
+      const majorMap = new Map();
+      responses.forEach(r => {
+        const display = normalizeText(r.major);
+        if (!display) return;
+        const key = majorKey(display);
+        if (!majorMap.has(key)) majorMap.set(key, display);
+      });
+      const majors = [...majorMap.entries()]
+        .sort((a, b) => a[1].localeCompare(b[1], undefined, { sensitivity: "base" }));
+
+      el("course-select").innerHTML =
+        `<option value="">All courses / groups</option>` +
+        courses.map(course =>
+          `<option value="${escapeHtml(course)}">${escapeHtml(course)}</option>`
+        ).join("");
+
+      el("major-select").innerHTML =
+        `<option value="">All majors</option>` +
+        majors.map(([key, display]) =>
+          `<option value="${escapeHtml(key)}">${escapeHtml(display)}</option>`
+        ).join("");
+
+      const dates = responses
+        .map(r => dateOnly(r.created_at))
+        .filter(Boolean)
+        .sort();
+
+      if (dates.length) {
+        el("date-from").min = dates[0];
+        el("date-from").max = dates[dates.length - 1];
+        el("date-to").min = dates[0];
+        el("date-to").max = dates[dates.length - 1];
+      }
+    }
+
+    function currentFilterDescription(responseCount) {
+      const course = el("course-select").value;
+      const majorOption = el("major-select").selectedOptions[0];
+      const major = el("major-select").value ? majorOption?.textContent : "";
+      const from = el("date-from").value;
+      const to = el("date-to").value;
+
+      const parts = [];
+      if (course) parts.push(course);
+      if (major) parts.push(major);
+
+      if (from && to) parts.push(`${from} to ${to}`);
+      else if (from) parts.push(`from ${from}`);
+      else if (to) parts.push(`through ${to}`);
+
+      activeFilterLabel = parts.length ? parts.join(" • ") : "All responses";
+      return `${responseCount} response${responseCount === 1 ? "" : "s"} • ${activeFilterLabel}`;
+    }
+
+    function filteredData() {
+      if (!allData) return null;
+
+      const course = normalizeText(el("course-select").value);
+      const major = el("major-select").value;
+      const from = el("date-from").value;
+      const to = el("date-to").value;
+
+      if (from && to && from > to) {
+        throw new Error("The From date must be on or before the To date.");
+      }
+
+      const responses = allData.responseSummary.filter(row => {
+        if (course && normalizeText(row.course_group) !== course) return false;
+        if (major && majorKey(row.major) !== major) return false;
+
+        const submitted = dateOnly(row.created_at);
+        if (from && (!submitted || submitted < from)) return false;
+        if (to && (!submitted || submitted > to)) return false;
+
+        return true;
+      });
+
+      const ids = new Set(responses.map(r => String(r.response_id)));
+
+      return {
+        responseSummary: responses,
+        cardChoices: allData.cardChoices.filter(r => ids.has(String(r.response_id))),
+        finalSelections: allData.finalSelections.filter(r => ids.has(String(r.response_id))),
+        categoryScores: allData.categoryScores.filter(r => ids.has(String(r.response_id)))
+      };
+    }
+
+    async function loadData() {
+      if (!token()) {
+        setStatus("auth-status", "Paste your admin key first.", "error");
+        return;
+      }
+
+      el("connect").disabled = true;
+      setStatus("auth-status", "Loading saved responses…");
+
+      try {
+        const body = await apiGet("/api/admin/responses");
+        allData = normalizePayload(body);
+
+        if (!allData.responseSummary.length) {
+          throw new Error("No saved responses were found yet.");
+        }
+
+        sessionStorage.setItem(TOKEN_KEY, token());
+        populateFilters();
+        el("toolbar-panel").classList.remove("hidden");
+
+        setStatus(
+          "auth-status",
+          `${allData.responseSummary.length} saved response${allData.responseSummary.length === 1 ? "" : "s"} loaded.`,
+          "success"
+        );
+
+        resetFilters(true);
+      } catch (error) {
+        allData = null;
+        activeData = null;
+        setStatus("auth-status", error.message, "error");
+        el("toolbar-panel").classList.add("hidden");
+        el("report").classList.add("hidden");
+      } finally {
+        el("connect").disabled = false;
+      }
+    }
+
+    function applyFilters(scroll = true) {
+      try {
+        activeData = filteredData();
+        const count = activeData.responseSummary.length;
+
+        el("match-count").textContent =
+          `${count} of ${allData.responseSummary.length} responses match the current filters.`;
+
+        if (!count) {
+          el("report").classList.add("hidden");
+          setStatus("filter-status", "No responses match those filters.", "error");
+          return;
+        }
+
+        setStatus("filter-status", "");
+        renderReport(activeData);
+
+        if (scroll) {
+          el("report").scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      } catch (error) {
+        el("report").classList.add("hidden");
+        setStatus("filter-status", error.message, "error");
+      }
+    }
+
+    function resetFilters(apply = true) {
+      el("course-select").value = "";
+      el("major-select").value = "";
+      el("date-from").value = "";
+      el("date-to").value = "";
+      setStatus("filter-status", "");
+      if (apply && allData) applyFilters(false);
+    }
+
+    function renderReport(data) {
+      const responses = data.responseSummary;
+      const cardChoices = data.cardChoices;
+      const finalSelections = data.finalSelections;
+      const responseCount = responses.length;
+
+      const interested = cardChoices.filter(r => choiceLabel(r.choice) === "Interested").length;
+      const maybe = cardChoices.filter(r => choiceLabel(r.choice) === "Maybe").length;
+      const notForMe = cardChoices.filter(r => choiceLabel(r.choice) === "Not for me").length;
+      const allChoices = interested + maybe + notForMe;
+
+      el("metric-responses").textContent = responseCount.toLocaleString();
+      el("metric-interested").textContent = allChoices ? pct(interested / allChoices) : "—";
+      el("metric-maybe").textContent = allChoices ? pct(maybe / allChoices) : "—";
+      el("metric-selected").textContent = finalSelections.length.toLocaleString();
+
+      const courseValue = el("course-select").value;
+      const majorOption = el("major-select").selectedOptions[0];
+      const majorValue = el("major-select").value ? majorOption?.textContent : "";
+      const titleParts = [];
+
+      if (courseValue) titleParts.push(courseValue);
+      if (majorValue) titleParts.push(majorValue);
+
+      el("report-heading").textContent =
+        titleParts.length ? titleParts.join(" — ") : "Helping Professions Card Sort Snapshot";
+
+      el("report-subtitle").textContent = currentFilterDescription(responseCount);
+
+      renderCategoryTable(cardChoices);
+      renderTopChoices(finalSelections, responseCount);
+      renderMaybeStretches(cardChoices, responseCount);
+      renderContext(responses);
+
+      el("report").classList.remove("hidden");
+    }
+
+    function renderCategoryTable(cardChoices) {
+      const stats = new Map();
+
+      cards.forEach(card => {
+        if (!stats.has(card.categoryA)) {
+          stats.set(card.categoryA, { interested: 0, maybe: 0, not: 0, total: 0 });
+        }
+      });
+
+      cardChoices.forEach(row => {
+        const cat = cardCategory(row.card_id);
+        if (!stats.has(cat)) {
+          stats.set(cat, { interested: 0, maybe: 0, not: 0, total: 0 });
+        }
+
+        const s = stats.get(cat);
+        const label = choiceLabel(row.choice);
+
+        if (label === "Interested") s.interested += 1;
+        else if (label === "Maybe") s.maybe += 1;
+        else if (label === "Not for me") s.not += 1;
+
+        s.total += 1;
+      });
+
+      const rows = [...stats.entries()]
+        .filter(([, s]) => s.total > 0)
+        .sort((a, b) => {
+          const aRate = (a[1].interested * 2 + a[1].maybe) / Math.max(a[1].total * 2, 1);
+          const bRate = (b[1].interested * 2 + b[1].maybe) / Math.max(b[1].total * 2, 1);
+          return bRate - aRate;
+        });
+
+      el("category-body").innerHTML =
+        rows.map(([name, s]) => {
+          const yesRate = s.interested / s.total;
+          const maybeRate = s.maybe / s.total;
+
+          return `
+            <tr>
+              <td><strong>${escapeHtml(categoryLabels[name] || name)}</strong></td>
+              <td class="num">${pct(yesRate)}</td>
+              <td class="num">${pct(maybeRate)}</td>
+              <td>
+                <div class="bar" aria-label="${pct(yesRate)} interested, ${pct(maybeRate)} maybe">
+                  <span class="yes" style="width:${yesRate * 100}%"></span>
+                  <span class="maybe" style="width:${maybeRate * 100}%"></span>
+                </div>
+              </td>
+            </tr>
+          `;
+        }).join("") ||
+        `<tr><td colspan="4">No card-level response data found.</td></tr>`;
+    }
+
+    function renderTopChoices(finalSelections, responseCount) {
+      const counts = new Map();
+
+      finalSelections.forEach(row => {
+        const id = String(row.card_id);
+        counts.set(id, (counts.get(id) || 0) + 1);
+      });
+
+      const top = [...counts.entries()]
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 10);
+
+      el("top-choices").innerHTML =
+        top.map(([id, count], index) => `
+          <div class="rank-row">
+            <span class="rank">${index + 1}</span>
+            <div class="rank-main">
+              <strong>${escapeHtml(cardName(id))}</strong>
+              <span class="muted">${pct(responseCount ? count / responseCount : 0)} of students • ${count} selection${count === 1 ? "" : "s"}</span>
+            </div>
+          </div>
+        `).join("") ||
+        `<p class="muted">No final-choice data found.</p>`;
+    }
+
+    function renderMaybeStretches(cardChoices, responseCount) {
+      const byCard = new Map();
+
+      cardChoices.forEach(row => {
+        const id = String(row.card_id);
+
+        if (!byCard.has(id)) {
+          byCard.set(id, { interested: 0, maybe: 0, not: 0 });
+        }
+
+        const s = byCard.get(id);
+        const label = choiceLabel(row.choice);
+
+        if (label === "Interested") s.interested += 1;
+        else if (label === "Maybe") s.maybe += 1;
+        else if (label === "Not for me") s.not += 1;
+      });
+
+      const items = [...byCard.entries()]
+        .map(([id, s]) => ({
+          id,
+          maybe: s.maybe,
+          interested: s.interested,
+          maybeRate: responseCount ? s.maybe / responseCount : 0,
+          interestedRate: responseCount ? s.interested / responseCount : 0
+        }))
+        .filter(item => item.maybe > 0 && item.maybe >= item.interested)
+        .sort((a, b) => b.maybeRate - a.maybeRate || b.maybe - a.maybe)
+        .slice(0, 5);
+
+      el("maybe-stretches").innerHTML =
+        items.map((item, index) => `
+          <div class="rank-row">
+            <span class="rank">${index + 1}</span>
+            <div class="rank-main">
+              <strong>${escapeHtml(cardName(item.id))}</strong>
+              <span class="muted">${pct(item.maybeRate)} Maybe • ${pct(item.interestedRate)} Interested</span>
+            </div>
+          </div>
+        `).join("") ||
+        `<p class="muted">No activities currently meet the “Maybe stretch” rule.</p>`;
+    }
+
+    function renderContext(responses) {
+      const majors = new Map();
+      const courses = new Map();
+
+      responses.forEach(row => {
+        const major = normalizeText(row.major);
+        const course = normalizeText(row.course_group);
+
+        if (major) majors.set(major, (majors.get(major) || 0) + 1);
+        if (course) courses.set(course, (courses.get(course) || 0) + 1);
+      });
+
+      const topMajors = [...majors.entries()]
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 5);
+
+      const topCourses = [...courses.entries()]
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 5);
+
+      const first = responses.map(r => r.created_at).filter(Boolean).sort()[0];
+      const last = responses.map(r => r.updated_at || r.created_at).filter(Boolean).sort().at(-1);
+
+      el("context-body").innerHTML = `
+        <tr>
+          <th>Filters</th>
+          <td>${escapeHtml(activeFilterLabel)}</td>
+        </tr>
+        <tr>
+          <th>First response</th>
+          <td>${escapeHtml(formatDate(first))}</td>
+        </tr>
+        <tr>
+          <th>Most recent update</th>
+          <td>${escapeHtml(formatDate(last))}</td>
+        </tr>
+        <tr>
+          <th>Majors represented</th>
+          <td>${escapeHtml(topMajors.length ? topMajors.map(([n,c]) => `${n} (${c})`).join(", ") : "No optional major information")}</td>
+        </tr>
+        <tr>
+          <th>Courses / groups represented</th>
+          <td>${escapeHtml(topCourses.length ? topCourses.map(([n,c]) => `${n} (${c})`).join(", ") : "No course/group information")}</td>
+        </tr>
+      `;
+    }
+
+    function csvEscape(value) {
+      const text = value == null ? "" : String(value);
+      return /[",\n\r]/.test(text) ? `"${text.replaceAll('"', '""')}"` : text;
+    }
+
+    function downloadCsv(filename, rows, columns) {
+      const lines = [
+        columns.map(c => csvEscape(c.label)).join(","),
+        ...rows.map(row => columns.map(c => csvEscape(c.value(row))).join(","))
+      ];
+
+      const blob = new Blob(["\uFEFF" + lines.join("\r\n")], {
+        type: "text/csv;charset=utf-8"
+      });
+
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = filename;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(url);
+    }
+
+    function safeFilename(value) {
+      return String(value || "all-responses")
+        .trim()
+        .replace(/[^a-z0-9-_]+/gi, "-")
+        .replace(/^-+|-+$/g, "")
+        .slice(0, 100) || "all-responses";
+    }
+
+    function filteredFilenameBase() {
+      const course = el("course-select").value || "all-courses";
+      const majorOption = el("major-select").selectedOptions[0];
+      const major = el("major-select").value ? majorOption?.textContent : "all-majors";
+      const from = el("date-from").value;
+      const to = el("date-to").value;
+
+      const datePart =
+        from && to ? `${from}-to-${to}` :
+        from ? `from-${from}` :
+        to ? `through-${to}` :
+        "all-dates";
+
+      return safeFilename(`${course}-${major}-${datePart}`);
+    }
+
+    function downloadResponses() {
+      const rows = activeData?.responseSummary || [];
+
+      downloadCsv(
+        `helping-cards-${filteredFilenameBase()}-responses.csv`,
+        rows,
+        [
+          { label:"Response ID", value:r => r.response_id },
+          { label:"Anonymous Session ID", value:r => r.session_id },
+          { label:"Major", value:r => r.major },
+          { label:"Use Context", value:r => r.usage_context },
+          { label:"Course / Group", value:r => r.course_group },
+          { label:"Interested", value:r => r.interested_count },
+          { label:"Maybe", value:r => r.maybe_count },
+          { label:"Not for Me", value:r => r.not_count },
+          { label:"Final Selections", value:r => r.selected_count },
+          { label:"First Submitted", value:r => r.created_at },
+          { label:"Last Updated", value:r => r.updated_at },
+          { label:"Schema Version", value:r => r.schema_version || "" }
+        ]
+      );
+    }
+
+    function downloadCards() {
+      const rows = activeData?.cardChoices || [];
+
+      downloadCsv(
+        `helping-cards-${filteredFilenameBase()}-card-choices.csv`,
+        rows,
+        [
+          { label:"Response ID", value:r => r.response_id },
+          { label:"Anonymous Session ID", value:r => r.session_id || "" },
+          { label:"Card ID", value:r => r.card_id },
+          { label:"Activity", value:r => cardName(r.card_id) },
+          { label:"Category", value:r => categoryLabels[cardCategory(r.card_id)] || cardCategory(r.card_id) },
+          { label:"Choice", value:r => choiceLabel(r.choice) }
+        ]
+      );
+    }
+
+    function downloadFinals() {
+      const rows = activeData?.finalSelections || [];
+
+      downloadCsv(
+        `helping-cards-${filteredFilenameBase()}-final-choices.csv`,
+        rows,
+        [
+          { label:"Response ID", value:r => r.response_id },
+          { label:"Anonymous Session ID", value:r => r.session_id || "" },
+          { label:"Selection Rank", value:r => r.selection_rank },
+          { label:"Card ID", value:r => r.card_id },
+          { label:"Activity", value:r => cardName(r.card_id) },
+          { label:"Category", value:r => categoryLabels[cardCategory(r.card_id)] || cardCategory(r.card_id) }
+        ]
+      );
+    }
+
+    el("connect").addEventListener("click", loadData);
+    el("apply-filters").addEventListener("click", () => applyFilters(true));
+    el("reset-filters").addEventListener("click", () => resetFilters(true));
+
+    ["course-select","major-select","date-from","date-to"].forEach(id => {
+      el(id).addEventListener("change", () => {
+        if (allData) applyFilters(false);
+      });
+    });
+
+    el("clear-key").addEventListener("click", () => {
+      sessionStorage.removeItem(TOKEN_KEY);
+      el("admin-token").value = "";
+      el("toolbar-panel").classList.add("hidden");
+      el("report").classList.add("hidden");
+      allData = null;
+      activeData = null;
+      setStatus("auth-status", "Admin key cleared from this browser tab.", "success");
+    });
+
+    el("download-responses").addEventListener("click", downloadResponses);
+    el("download-cards").addEventListener("click", downloadCards);
+    el("download-finals").addEventListener("click", downloadFinals);
+    el("print-report").addEventListener("click", () => window.print());
+
+    const savedToken = sessionStorage.getItem(TOKEN_KEY);
+    if (savedToken) {
+      el("admin-token").value = savedToken;
+      loadData();
+    }
   })();
   </script>
 </body>
