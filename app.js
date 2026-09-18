@@ -1085,18 +1085,13 @@
       });
 
       return true;
-    } catch (error) {
-      console.error(
-        "Card sort submission failed:",
-        error
-      );
+   } catch (error) {
+  console.error("Card sort submission failed:", error);
 
-      el(
-        "save-status"
-      ).textContent =
-        "We couldn't submit your results. Check your connection and try again; your choices are still on this device.";
+  el("save-status").textContent =
+    `Submission error: ${error.message || "Unknown error"}`;
 
-      return false;
+  return false;
     } finally {
       saveButton.disabled = false;
 
